@@ -1,0 +1,55 @@
+<%= simple_form_for(@meeting) do |f| %>
+  <%= f.error_notification %>
+
+    <div class="row">
+      <div class="input-field col m12">
+        <%= f.input :name %>
+      </div>
+      <div class="input-field col m12">
+        <%= f.input :reason, input_html: { class: "materialize-textarea" } %>
+      </div>
+    </div>
+    <div class="row">
+        <div class="input-field col m6">
+          <%= f.input :street %>
+        </div>
+        <div class="input-field col m6">
+          <%= f.input :suburb %>
+        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col m4">
+        <%= f.input :postcode %>
+      </div>
+      <div class="input-field col m4">
+        <%= f.input :state, collection: ['NSW', 'ACT', 'VIC', 'WA', 'NT', 'QLD', 'TAS'], input_html: { class: 'browser-default'} %>
+      </div>
+      <div class="input-field col m4">
+        <%= f.input :country %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col m12">
+        <%#f.input :date, as: :string, input_html: { class: "datepicker" } %>
+        <input type="date" class="datepicker" name="meeting[date]">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col m6">
+        <%= f.input :start_time %>
+      </div>
+      <div class="input-field col m6">
+        <%= f.input :end_time %>
+      </div>
+    </div>
+
+    <div class+"row">
+        <div class="input-field col m12">
+        <%= f.input :tag_list, input_html: { value: @meeting.tag_list.to_s} %>
+        </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

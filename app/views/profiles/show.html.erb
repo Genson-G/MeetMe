@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+   
+   <div class="row">
+      <div class="col m4">
+   <div class="card">
+      <div class="card-image waves-effect waves-block waves-light">
+        <img class="activator" src="<%= asset_path @profile.image %>">
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><%= @profile.full_name %><i class="material-icons right">more_vert</i>
+        </span>
+        <p><%= @profile.job_title %>
+        <!-- <p><a href="#">This is a link</a></p> -->
+      </div>
+      <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Edit profile<i class="material-icons right">close</i></span>
+        <%= render 'profiles/form' %>
+      </div>
+      </div>
+    </div>
+    </div>
+<!-- <p>
+  <strong>First name:</strong>
+  <%= @profile.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @profile.last_name %>
+</p>
+
+<p>
+  <strong>Job title:</strong>
+  <%= @profile.job_title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @profile.image %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user %>
+</p> -->
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>
